@@ -2,7 +2,7 @@
 delta=0.01;
 
 // Maximize cylinder line segements.
-$fs=0.01;
+$fn=100;
 
 // Typical 5mm LED.
 ledd=5;
