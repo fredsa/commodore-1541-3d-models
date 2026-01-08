@@ -6,9 +6,10 @@ $fn=100;
 
 // Typical 5mm LED.
 ledd=5;
-ledz=8.5;
-ledrimz=1;
+ledz=8;
+ledrimz=1.5;
 leddomez=1;
+ledclearance=0.05;
 
 // Thickness of LED holder above face plate.
 ledholderfacez=1;
@@ -23,7 +24,7 @@ difference() {
 
     // Led.
     translate([0, 0, -delta])
-        cylinder(h=ledz-ledrimz-leddomez+2*delta, r=ledd/2);
+        cylinder(h=ledz-ledrimz-leddomez+2*delta, r=ledd/2+ledclearance);
 }
 
 module ledholder() {
