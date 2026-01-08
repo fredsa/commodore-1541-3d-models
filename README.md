@@ -13,7 +13,7 @@
 
 1.  Download and install [OpenSCAD](https://openscad.org/)
 
-2.  Open `led.scad`
+2.  Open `led-holder.scad`
 
 3.  Press F6 to render the model
 
