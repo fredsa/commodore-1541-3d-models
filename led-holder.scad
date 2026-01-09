@@ -1,5 +1,5 @@
 model(
-    assembled=!true,
+    assembled=true,
     front=true,
     back=true
     );
@@ -40,7 +40,7 @@ module model(assembled, front, back) {
         }
         
         if (back) {
-            translate([0, 0, 10])
+            translate([0, 0, faceplatewallz])
                 back_ledholder();
         }
     } else {
@@ -93,15 +93,15 @@ module back_ledholder() {
     // Body.
     difference() {
         // OD.
-        cylinder(h=ledz-leddomez-protrudez, r=faceplateID/2+2);
+        cylinder(h=ledz-leddomez-protrudez-faceplatewallz, r=faceplateID/2+2);
 
         // ID.
         translate([0, 0, -delta])
-            cylinder(h=ledz-leddomez-protrudez+2*delta, r=faceplateID/2);
+            cylinder(h=ledz-leddomez-protrudez-faceplatewallz+2*delta, r=faceplateID/2);
     }
     
     // Back.
-    translate([0, 0, ledz-leddomez-protrudez])
+    translate([0, 0, ledz-leddomez-protrudez-faceplatewallz])
     difference() {
         // OD.
         cylinder(h=back_ledholder_backz, r=faceplateID/2+2);
