@@ -33,6 +33,7 @@ protrudeod=faceplateID+1;
 faceplatewallz=2;
 
 back_ledholder_backz=1;
+back_ledholder_od=faceplateID/2+2;
 
 module model(assembled, front, back) {
     if (assembled) {
@@ -95,7 +96,7 @@ module back_ledholder() {
     // Body.
     difference() {
         // OD.
-        cylinder(h=ledz-leddomez-protrudez-faceplatewallz, r=faceplateID/2+2);
+        cylinder(h=ledz-leddomez-protrudez-faceplatewallz, r=back_ledholder_od);
 
         // ID.
         translate([0, 0, -delta])
