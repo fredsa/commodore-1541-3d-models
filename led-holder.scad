@@ -18,6 +18,8 @@ ledrimz=1.5;
 leddomez=1;
 ledclearance=0.05;
 
+frontbackclearance=0.05;
+
 // Faceplate model hole inner diameter.
 faceplateID=8.5;
 
@@ -86,7 +88,7 @@ module solid_front_ledholder() {
 
     // Body.
     translate([0, 0, protrudez])
-        cylinder(h=ledz-ledrimz-leddomez-protrudez, r=faceplateID/2);
+        cylinder(h=ledz-ledrimz-leddomez-protrudez, r=faceplateID/2-frontbackclearance);
 }
 
 module back_ledholder() {
